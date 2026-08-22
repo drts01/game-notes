@@ -49,46 +49,7 @@ Your goal is to score Power (Victory Points) across five Chapters by declaring A
 
 ## HOW TO PLAY OVERVIEW
 
-```mermaid
-graph TD
-    A[Game Start] --> B
-
-    subgraph B["Chapter Sequence"]
-        direction TB
-        C["Chapter Setup:<br/>Deal 6 Action Cards"] --> D["Initiative Player<br/>Leads Action Card"]
-        D --> E["Subsequent Players<br/>Play Action Card"]
-        E --> D
-        E --> F{"Are Action Cards<br/>Exhausted?"}
-        F -- No --> D
-    end
-
-    F -- Yes --> G["End Chapter<br/>Score Declared Ambitions"]
-    G --> I{"Chapter 5 OR<br/>Power Threshold Met?"}
-
-    I -- No --> J["• 1. Clean Up<br/>• 2. Increment Ambition Points<br/>• 3. Advance Chapter Marker"]
-    J --> B
-
-    I -- Yes --> K["★ Victory Resolution"]
-
-    %% Styling
-    classDef startStyle fill:#1e3a8a,stroke:#3b82f6,color:#fff;
-    classDef setupStyle fill:#581c87,stroke:#a855f7,color:#fff;
-    classDef initStyle fill:#14532d,stroke:#22c55e,color:#fff;
-    classDef playStyle fill:#713f12,stroke:#eab308,color:#fff;
-    classDef decisionStyle fill:#0f172a,stroke:#38bdf8,color:#fff;
-    classDef endChapterStyle fill:#7c2d12,stroke:#f97316,color:#fff;
-    classDef cleanupStyle fill:#1e3a8a,stroke:#60a5fa,color:#fff;
-    classDef victoryStyle fill:#854d0e,stroke:#facc15,color:#fff;
-
-    class A startStyle;
-    class C setupStyle;
-    class D initStyle;
-    class E playStyle;
-    class F,I decisionStyle;
-    class G endChapterStyle;
-    class J cleanupStyle;
-    class K victoryStyle;
-```
+![Arcs Macro Overview Flowchart](./arcs_overview.svg)
 
 ### Round Phases
 
