@@ -1,0 +1,55 @@
+graph TD
+    A[Start Turn: Play Action Card] --> B{Card Play Method}
+
+    B -->|Lead| C[Play Lead Suit & Rank<br/>• Full Printed Pips<br/>• May Declare Matching Ambition]
+    B -->|Surpass| D[Play Same Suit + Higher Rank<br/>• Full Printed Pips<br/>• Claims Initiative Next Round]
+    B -->|Pivot| E[Play Different Suit<br/>• Gain 1 Pip of Played Suit]
+    B -->|Copy| F[Play Card Face-Down<br/>• Gain 1 Pip of Lead Suit]
+    B -->|Seize Initiative| G[Discard Extra Card Face-Down<br/>• 0 Action Pips<br/>• Guarantees Initiative Next Round]
+
+    C --> H[Spend Pips on Suit Actions]
+    D --> H
+    E --> H
+    F --> H
+    G --> Z[End Turn]
+
+    H -->|Administration Suit| I[Blue Actions]
+    H -->|Aggression Suit| J[Red Actions]
+    H -->|Mobilization Suit| K[Yellow Actions]
+    H -->|Diplomacy Suit| L[Green Actions]
+
+    I -->|Tax| M1[Harvest Resource from Controlled City or Capture Rival Agent]
+    I -->|Build| M2[Construct Ships, Starports, or Cities]
+    I -->|Repair| M3[Flip Damaged Ships/Buildings Back to Healthy]
+
+    J -->|Battle| N1[Roll Skirmish / Assault / Raid Dice]
+    J -->|Move| N2[Move Ships out of 1 Origin System to Adjacent Systems]
+
+    K -->|Move| O1[Move Ships out of 1 Origin System to Adjacent Systems]
+    K -->|Influence| O2[Place Influence Agent onto Face-Up Court Card]
+
+    L -->|Influence| P1[Place Influence Agent onto Face-Up Court Card]
+    L -->|Secure| P2[Claim Court Card with Majority Influence]
+
+    M1 --> Z
+    M2 --> Z
+    M3 --> Z
+    N1 --> Z
+    N2 --> Z
+    O1 --> Z
+    O2 --> Z
+    P1 --> Z
+    P2 --> Z
+
+    %% Styling Definitions
+    classDef leadStyle fill:#1F2937,stroke:#9CA3AF,color:#FFF,stroke-width:2px;
+    classDef adminStyle fill:#1E3A8A,stroke:#3B82F6,color:#FFF,stroke-width:2px;
+    classDef aggroStyle fill:#7F1D1D,stroke:#EF4444,color:#FFF,stroke-width:2px;
+    classDef mobilStyle fill:#78350F,stroke:#F59E0B,color:#FFF,stroke-width:2px;
+    classDef diploStyle fill:#064E3B,stroke:#10B981,color:#FFF,stroke-width:2px;
+
+    class A leadStyle;
+    class I,M1,M2,M3 adminStyle;
+    class J,N1,N2 aggroStyle;
+    class K,O1,O2 mobilStyle;
+    class L,P1,P2 diploStyle;

@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" width="100%" height="100%" style="background-color: #0d1117; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <style>
+      .title-box { fill: #1f2937; stroke: #9ca3af; stroke-width: 2; }
+      .decision-box { fill: #161b22; stroke: #8b949e; stroke-width: 2; }
+      .card-box { fill: #161b22; stroke-width: 2; rx: 6; }
+      .suit-box { fill: #161b22; stroke-width: 2; rx: 8; }
+      .action-box { fill: #0d1117; stroke-width: 1.5; rx: 4; }
+
+      .text-title { fill: #ffffff; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .text-header { fill: #ffffff; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .text-sub { fill: #c9d1d9; font-size: 11px; text-anchor: middle; }
+      .text-desc { fill: #8b949e; font-size: 10px; text-anchor: middle; }
+      .text-label { fill: #c9d1d9; font-size: 11px; font-weight: 500; text-anchor: middle; }
+
+      .stroke-lead { stroke: #9ca3af; }
+      .stroke-admin { stroke: #3b82f6; }
+      .stroke-aggro { stroke: #ef4444; }
+      .stroke-mobil { stroke: #f59e0b; }
+      .stroke-diplo { stroke: #10b981; }
+
+      .fill-admin { fill: #3b82f6; }
+      .fill-aggro { fill: #ef4444; }
+      .fill-mobil { fill: #f59e0b; }
+      .fill-diplo { fill: #10b981; }
+
+      .line-main { stroke: #8b949e; stroke-width: 2; fill: none; }
+      .arrow { fill: #8b949e; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow" />
+    </marker>
+    <marker id="arrow-admin" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-aggro" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-mobil" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrow-diplo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- START NODE -->
+  <rect x="425" y="20" width="250" height="40" rx="6" class="title-box" />
+  <text x="550" y="45" class="text-title">START TURN: PLAY ACTION CARD</text>
+
+  <path d="M 550 60 L 550 90" class="line-main" marker-end="url(#arrow)" />
+
+  <!-- DECISION NODE -->
+  <polygon points="550,90 660,115 550,140 440,115" class="decision-box" />
+  <text x="550" y="119" class="text-header">CARD PLAY METHOD</text>
+
+  <!-- LINES TO PLAY METHODS -->
+  <path d="M 440 115 L 110 115 L 110 170" class="line-main" marker-end="url(#arrow)" />
+  <path d="M 480 130 L 330 130 L 330 170" class="line-main" marker-end="url(#arrow)" />
+  <path d="M 550 140 L 550 170" class="line-main" marker-end="url(#arrow)" />
+  <path d="M 620 130 L 770 130 L 770 170" class="line-main" marker-end="url(#arrow)" />
+  <path d="M 660 115 L 990 115 L 990 170" class="line-main" marker-end="url(#arrow)" />
+
+  <!-- PLAY METHOD BOXES -->
+  <!-- LEAD -->
+  <rect x="20" y="170" width="180" height="95" rx="6" class="card-box stroke-lead" />
+  <text x="110" y="192" class="text-header">LEAD</text>
+  <text x="110" y="212" class="text-sub">• Play Lead Suit &amp; Rank</text>
+  <text x="110" y="228" class="text-sub">• Full Printed Pips</text>
+  <text x="110" y="244" class="text-sub">• May Declare Ambition</text>
+
+  <!-- SURPASS -->
+  <rect x="240" y="170" width="180" height="95" rx="6" class="card-box stroke-lead" />
+  <text x="330" y="192" class="text-header">SURPASS</text>
+  <text x="330" y="212" class="text-sub">• Same Suit + Higher Rank</text>
+  <text x="330" y="228" class="text-sub">• Full Printed Pips</text>
+  <text x="330" y="244" class="text-sub">• Claims Next Initiative</text>
+
+  <!-- PIVOT -->
+  <rect x="460" y="170" width="180" height="95" rx="6" class="card-box stroke-lead" />
+  <text x="550" y="192" class="text-header">PIVOT</text>
+  <text x="550" y="212" class="text-sub">• Play Different Suit</text>
+  <text x="550" y="228" class="text-sub">• Gain 1 Pip (Played Suit)</text>
+
+  <!-- COPY -->
+  <rect x="680" y="170" width="180" height="95" rx="6" class="card-box stroke-lead" />
+  <text x="770" y="192" class="text-header">COPY</text>
+  <text x="770" y="212" class="text-sub">• Play Card Face-Down</text>
+  <text x="770" y="228" class="text-sub">• Gain 1 Pip (Lead Suit)</text>
+
+  <!-- SEIZE -->
+  <rect x="900" y="170" width="180" height="95" rx="6" class="card-box stroke-lead" />
+  <text x="990" y="192" class="text-header">SEIZE INITIATIVE</text>
+  <text x="990" y="212" class="text-sub">• Discard 2nd Card Face-Down</text>
+  <text x="990" y="228" class="text-sub">• 0 Action Pips</text>
+  <text x="990" y="244" class="text-sub">• Guarantees Initiative</text>
+
+  <!-- SPEND PIPS CONVERGENCE -->
+  <path d="M 110 265 L 110 300 L 550 300" class="line-main" />
+  <path d="M 330 265 L 330 300" class="line-main" />
+  <path d="M 550 265 L 550 300" class="line-main" />
+  <path d="M 770 265 L 770 300 L 550 300" class="line-main" />
+
+  <path d="M 550 300 L 550 330" class="line-main" marker-end="url(#arrow)" />
+  <rect x="425" y="330" width="250" height="35" rx="6" class="decision-box" />
+  <text x="550" y="352" class="text-header">SPEND PIPS ON SUIT ACTIONS</text>
+
+  <!-- SEIZE BYPASS TO END -->
+  <path d="M 990 265 L 990 730 L 675 730" class="line-main" marker-end="url(#arrow)" />
+
+  <!-- LINES TO SUIT CATEGORIES -->
+  <path d="M 440 347 L 140 347 L 140 390" style="stroke: #3b82f6; stroke-width: 2; fill: none;" marker-end="url(#arrow-admin)" />
+  <path d="M 480 365 L 410 365 L 410 390" style="stroke: #ef4444; stroke-width: 2; fill: none;" marker-end="url(#arrow-aggro)" />
+  <path d="M 620 365 L 690 365 L 690 390" style="stroke: #f59e0b; stroke-width: 2; fill: none;" marker-end="url(#arrow-mobil)" />
+  <path d="M 660 347 L 960 347 L 960 390" style="stroke: #10b981; stroke-width: 2; fill: none;" marker-end="url(#arrow-diplo)" />
+
+  <!-- SUIT CATEGORY HEADERS -->
+  <!-- ADMIN -->
+  <rect x="20" y="390" width="240" height="40" rx="8" class="suit-box stroke-admin" />
+  <text x="140" y="415" class="text-header fill-admin">ADMINISTRATION (BLUE)</text>
+
+  <!-- AGGRO -->
+  <rect x="290" y="390" width="240" height="40" rx="8" class="suit-box stroke-aggro" />
+  <text x="410" y="415" class="text-header fill-aggro">AGGRESSION (RED)</text>
+
+  <!-- MOBIL -->
+  <rect x="570" y="390" width="240" height="40" rx="8" class="suit-box stroke-mobil" />
+  <text x="690" y="415" class="text-header fill-mobil">MOBILIZATION (YELLOW)</text>
+
+  <!-- DIPLO -->
+  <rect x="840" y="390" width="240" height="40" rx="8" class="suit-box stroke-diplo" />
+  <text x="960" y="415" class="text-header fill-diplo">DIPLOMACY (GREEN)</text>
+
+  <!-- SPECIFIC ACTIONS -->
+  <!-- ADMIN ACTIONS -->
+  <path d="M 140 430 L 140 460" style="stroke: #3b82f6; stroke-width: 2; fill: none;" marker-end="url(#arrow-admin)" />
+  <rect x="30" y="460" width="220" height="50" rx="4" class="action-box stroke-admin" />
+  <text x="140" y="480" class="text-header">TAX</text>
+  <text x="140" y="497" class="text-desc">Harvest Resource / Capture Agent</text>
+
+  <rect x="30" y="520" width="220" height="50" rx="4" class="action-box stroke-admin" />
+  <text x="140" y="540" class="text-header">BUILD</text>
+  <text x="140" y="557" class="text-desc">Construct Ships, Starports, or Cities</text>
+
+  <rect x="30" y="580" width="220" height="50" rx="4" class="action-box stroke-admin" />
+  <text x="140" y="600" class="text-header">REPAIR</text>
+  <text x="140" y="617" class="text-desc">Flip Damaged Units/Buildings</text>
+
+  <!-- AGGRO ACTIONS -->
+  <path d="M 410 430 L 410 460" style="stroke: #ef4444; stroke-width: 2; fill: none;" marker-end="url(#arrow-aggro)" />
+  <rect x="300" y="460" width="220" height="50" rx="4" class="action-box stroke-aggro" />
+  <text x="410" y="480" class="text-header">BATTLE</text>
+  <text x="410" y="497" class="text-desc">Roll Skirmish / Assault / Raid Dice</text>
+
+  <rect x="300" y="520" width="220" height="50" rx="4" class="action-box stroke-aggro" />
+  <text x="410" y="540" class="text-header">MOVE</text>
+  <text x="410" y="557" class="text-desc">Move Ships out of 1 Origin System</text>
+
+  <!-- MOBIL ACTIONS -->
+  <path d="M 690 430 L 690 460" style="stroke: #f59e0b; stroke-width: 2; fill: none;" marker-end="url(#arrow-mobil)" />
+  <rect x="580" y="460" width="220" height="50" rx="4" class="action-box stroke-mobil" />
+  <text x="690" y="480" class="text-header">MOVE</text>
+  <text x="690" y="497" class="text-desc">Move Ships out of 1 Origin System</text>
+
+  <rect x="580" y="520" width="220" height="50" rx="4" class="action-box stroke-mobil" />
+  <text x="690" y="540" class="text-header">INFLUENCE</text>
+  <text x="690" y="557" class="text-desc">Place Agent on Face-Up Court Card</text>
+
+  <!-- DIPLO ACTIONS -->
+  <path d="M 960 430 L 960 460" style="stroke: #10b981; stroke-width: 2; fill: none;" marker-end="url(#arrow-diplo)" />
+  <rect x="850" y="460" width="220" height="50" rx="4" class="action-box stroke-diplo" />
+  <text x="960" y="480" class="text-header">INFLUENCE</text>
+  <text x="960" y="497" class="text-desc">Place Agent on Face-Up Court Card</text>
+
+  <rect x="850" y="520" width="220" height="50" rx="4" class="action-box stroke-diplo" />
+  <text x="960" y="540" class="text-header">SECURE</text>
+  <text x="960" y="557" class="text-desc">Claim Court Card with Majority</text>
+
+  <!-- END TURN CONVERGENCE -->
+  <path d="M 140 640 L 140 680 L 550 680" style="stroke: #3b82f6; stroke-width: 2; fill: none;" />
+  <path d="M 410 580 L 410 680" style="stroke: #ef4444; stroke-width: 2; fill: none;" />
+  <path d="M 690 580 L 690 680" style="stroke: #f59e0b; stroke-width: 2; fill: none;" />
+  <path d="M 960 580 L 960 680 L 550 680" style="stroke: #10b981; stroke-width: 2; fill: none;" />
+
+  <path d="M 550 680 L 550 710" class="line-main" marker-end="url(#arrow)" />
+  <rect x="425" y="710" width="250" height="40" rx="6" class="title-box" />
+  <text x="550" y="735" class="text-title">END TURN</text>
+
+</svg>
